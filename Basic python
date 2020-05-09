@@ -1,0 +1,312 @@
+""""
+Author Subham kumar jha
+
+""""
+
+
+# checking for string
+data="hello world"
+print(data,type(data))
+print(data[0]+data[1]+data[2]+data[3])
+# cheking for values
+value=123.5
+print(value,type(value))
+# print(value[0])
+value=15
+print(value)
+# for boolean
+a=True
+b=False
+print(a,b,type(a))
+# multiple assignment
+a,b,c=10,12,18
+print(a,b,c)
+# No value
+a=None
+print(a,type(a))
+# Flow Control
+
+# There are three main types of flow control
+# that you need to learn: If-Then-Else conditions,
+# For-Loops and While-Loops.
+value=100
+if value>=99:
+    print("this is fast")
+elif value>=200:
+    print("that is too fast")
+else:
+    print("That is safe")
+# For loop
+
+for i in range(10):
+    print(i,end=" ")
+# While loop
+i=0
+print()
+while i<10:
+    print(i,end=" ")
+    i+=1
+print()
+# Data Structures
+#
+# There are three data structures in Python that you will find
+# the most used and useful. They are tuples, lists and dictionaries
+
+# Tuple Example
+#
+# Tuples are read-only collections of items.
+a=(1,2,3)
+print(a,type(a),type(a[0]))
+print(a[0]+a[1]+a[2])
+b=("ram","shyam","mohan")
+print(b,type(b[0]))
+print(b[0]+b[1]+b[2])
+c=("ram",10,8.5)
+print(c,type(c[0]),type(c[1]),type(c[2]))
+# print(((int)c[0])+c[1]+c[2]) #will give error
+# print(c[0]+c[1]+c[2])
+d=(10.5,10)
+print(d[0]+d[1],type(d[1]))
+print(int(d[0])+d[1],type(d[0]))# meaning typecasting happen at run time
+
+
+# List Example
+# Lists
+#
+# A list is a data-structure, or it can be considered a
+# container that can be used to store multiple data at once.
+# The list will be ordered and there will be a definite
+# count of it. The elements are indexed according to a sequence
+# and the indexing is done with 0 as the first index. Each element
+# will have a distinct place in the sequence and if the same value
+# occurs multiple times in the sequence, each will be considered
+# separate and distinct element. A more detailed description on
+# lists and associated data-types are covered in this tutorial.
+
+# In this tutorial you will come to know of the about how to create
+# python lists and the common paradigms for a python list.
+# Lists are great if you want to preserve the sequence of the data
+# and then iterate over them later for various purposes.
+# We will cover iterations and for loops in our tutorials on for loops.
+# # Lists use the square bracket
+# notation and can be index using array notation
+mylist=[1,2,3]
+print("Zeroth value:%d"%mylist[0])
+print(mylist[1],mylist[2])
+# Method on list
+#########################
+# Adding to list
+mylist.append(4)
+print("list length: %d"% len(mylist))
+for i in range(len(mylist)):
+    print(mylist[i],end=" ")
+print()
+##########################
+# list.insert(index, element)
+# - will add another element to the
+# list at the given index, shifting the elements greater than the
+# index one step to the right. In other words, the elements with the
+# index greater than the provided index will increase by one
+mylist.insert(0,0)
+print("after inserting")
+for i in range(len(mylist)):
+    print(mylist[i],end=" ")
+print()
+#############################
+# list.extend(another_list) -
+# will add the elements in list 2 at the end of list
+list2=[5,6]
+mylist.extend(list2)
+print("after extending")
+for i in range(len(mylist)):
+    print(mylist[i],end=" ")
+print()
+##############################
+# list.index(elem) - will give the index number
+# of the element in the list.
+index=mylist.index(5)
+print("index of 5 is ",index)
+print()
+###############################
+# list.remove(elem) - will search for the first occurrence of
+# the element in the list and will then remove it.
+mylist.remove(5)
+# index=mylist.index(5)
+# print("index of 5 is ",index)
+print("after deleting 5")
+for i in range(len(mylist)):
+    print(mylist[i],end=" ")
+print()
+###############################
+# list.pop() - will remove the last element of the list. If the
+# index is provided, then it will remove the
+# element at the particular index.
+# For example, if you have a list [5, 4, 3, 1] and
+# you apply the method pop, it will return
+# the last element 1 and the resulting list will not have it.
+mylist.pop()
+print("after poping")
+for i in range(len(mylist)):
+    print(mylist[i],end=" ")
+print()
+# You can pop the random no by giving the index
+mylist.pop(3)
+print("after poping 3rd index")
+for i in range(len(mylist)):
+    print(mylist[i],end=" ")
+print()
+#######################
+# list.sort() - will sort the list in-place.
+list3=[-2,10,2]
+mylist.extend(list3)
+mylist.sort()
+print("after extending and sorting")
+for i in range(len(mylist)):
+    print(mylist[i],end=" ")
+print()
+#########################
+# list.reverse() - will reverse the list in place
+mylist.reverse()
+print("after reversing ")
+for i in range(len(mylist)):
+    print(mylist[i],end=" ")
+print()
+############Functions over Python Lists:###########
+# You use the function “len” to get the length of the list.
+print("lenth of list is=",len(mylist))
+#####################
+# If you use another function “enumerate” over a list, it gives
+# us a nice construct to get
+# both the index and the value of the element in the list.
+for indx, name in enumerate(mylist):
+    print("Index is %s for value: %s" % (indx, name))
+#######################
+# sorted function will sort over the list
+#
+# Similar to the sort method, you can also use the sorted
+# function which also sorts the list. The difference is
+# that it returns the sorted list, while the sort method sorts
+# the list in place. So this function
+# can be used when you want to preserve the original list as well.
+print("sorted list is::",sorted(mylist))
+print("original list is ::",mylist)
+##########################
+# to count a particalar symbol
+print("count of 2 is::",mylist.count(2))
+print("count of 0 is::",mylist.count(0))
+#############future functio to look for#########
+# mylist.copy()
+# copy in Python (Deep Copy and Shallow Copy)
+# https://www.geeksforgeeks.org/copy-python-deep-copy-shallow-copy/
+# mylist.clear()
+###########################################
+# Dictionary Example
+# Dictionaries are mappings of names to values,
+# like a map. Note the use of the curly bracket notation.
+mydict={'a':1,"b":2,"c":3}
+print(mydict)
+print("the value of a is::",mydict["a"])
+print("the value of b is::",mydict["b"])
+mydict["a"]=10
+print(mydict)
+dict2={"name":"anup","age":24,"address":"vill=kasiyam,po=umri"}
+print(dict2)
+#creating empty list
+l=[]
+print("l=",l)
+l.append(10)
+l.append(20)
+print("l=",l)
+Dict={}
+print("dict:",dict)
+#creating dictionary with dict method
+Dict=dict({"Name":"Subham","age":20})
+print(Dict)
+#each item as pair
+dict_pair={1:"anup",2:"subham",3:"Kamani",4:"jha"}
+print(dict_pair)
+###################function on dictionary############
+Dict3={}
+Dict3[0]="Hello"
+Dict3[1]="World"
+print("Dict3=",Dict3)
+#updating the dictionary
+Dict3[0]="Not Hello"
+print("Dict3 new=",Dict3)
+#####################
+#acessing using key and get()
+print("Dict3[0]=",Dict3[0])
+print("At 1 in Dict3 is =",Dict3.get(1))
+###################
+#removing an element in dictionary
+#deletion of keys can be done by using the del keyword.Using del
+# keyword,specific values from a dictionary as well as whole
+# dictionary can be deleted. Items in a Nested dictionary
+# can also be deleted by using del keyword and providing specific
+# nested key and particular key to be deleted from that nested Dictionary.
+
+# Note- del Dict will delete the entire dictionary and hence printi//ng
+# it after deletion will raise an Error.
+Dict = { 5 : 'Welcome', 6 : 'To', 7 : 'Geeks',
+        'A' : {1 : 'Geeks', 2 : 'For', 3 : 'Geeks'},
+        'B' : {1 : 'Geeks', 2 : 'Life'}}
+print("Initial Dictionary: ",Dict)
+del Dict["B"]
+del Dict['A'][1]
+print("after the deleting the 1th element of A",Dict)
+######################################
+# Using pop() method
+
+# Pop() method is used to return and delete
+# the value of the key specified.
+Dict = {1: 'Geeks', 'name': 'For', 3: 'Geeks'}
+Dict.pop(3)
+print("After poping the index 3 ::",Dict)
+########################################
+# Using popitem() method
+# The popitem()
+# clear() method
+# dictionary_name.values()
+# str()
+# update()
+# setdefault()
+# keys()
+# items()
+# haskeys()
+# fromkeys()
+# types()
+# cmp()
+##################function############
+def mySum(x,y):
+    return x+y
+print(mySum(1,5))
+
+"""
+##################example class#########
+
+
+
+def ClassA:("example=grandfather")
+	data
+	fun1():{"logic"}
+	FUN2():{"logic"}
+	FUN2():{"logic"}
+##################Inheritence###########
+def ClassA:"example=grandfather"
+	data
+	fun1()"Set Surname="jha"
+	FUN2()
+	FUN3()
+def ClassB:"example=father"
+	data
+	fun1()"Set Surname="jha"
+	FUN4()
+	FUN5()
+def ClassC:"example=son"
+	data
+	fun1()"Set Surname="jha"
+	FUN6()
+	FUN7()
+"""
+
+
